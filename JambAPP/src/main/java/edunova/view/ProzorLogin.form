@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,21 +30,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="62" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="31" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblPoruka" min="-2" pref="284" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Component id="btnPrijava" min="-2" pref="103" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="pswLozinka" max="32767" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="188" max="-2" attributes="0"/>
-                          <Component id="txtKorisnickoIme" min="-2" pref="234" max="-2" attributes="0"/>
+                          <Component id="txtKorisnickoIme" pref="234" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="142" max="-2" attributes="0"/>
+                          <Component id="btnPrijava" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="lblPoruka" min="-2" pref="285" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,11 +64,13 @@
               <Component id="jLabel2" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pswLozinka" min="-2" pref="32" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-              <Component id="btnPrijava" min="-2" pref="36" max="-2" attributes="0"/>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
-              <Component id="lblPoruka" min="-2" pref="52" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="btnPrijava" min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblPoruka" min="-2" pref="84" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,6 +82,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtKorisnickoIme">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="KKaplo"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -75,6 +92,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pswLozinka">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pswLozinkaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPrijava">
       <Properties>
@@ -85,6 +108,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblPoruka">
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Unos novog korisnika"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

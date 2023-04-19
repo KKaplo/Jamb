@@ -23,7 +23,6 @@
     <mapping class="edunova.model.Igrac" />
     <mapping class="edunova.model.Polje" />
     <mapping class="edunova.model.Igra" />
-    <mapping class="edunova.model.Operater" />
     
     
   </session-factory>

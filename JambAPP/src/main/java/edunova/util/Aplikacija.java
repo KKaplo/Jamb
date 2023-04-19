@@ -4,6 +4,8 @@
  */
 package edunova.util;
 
+import edunova.model.Igrac;
+
 /**
  *
  * @author Karlo
@@ -11,4 +13,5 @@ package edunova.util;
 public class Aplikacija {
     
     public static final String NAZIV_APP="JambAPP";
+    public static Igrac IGRAC;
 }

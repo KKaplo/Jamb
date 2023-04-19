@@ -4,8 +4,8 @@
  */
 package edunova.view;
 
-import edunova.controller.ObradaOperater;
-import edunova.model.Operater;
+import edunova.controller.ObradaIgrac;
+import edunova.model.Igrac;
 import edunova.util.Aplikacija;
 
 /**
@@ -14,13 +14,13 @@ import edunova.util.Aplikacija;
  */
 public class ProzorLogin extends javax.swing.JFrame {
 
-    private ObradaOperater obrada;
+    private ObradaIgrac obrada;
     /**
      * Creates new form ProzorLogin
      */
     public ProzorLogin() {
         initComponents();
-        obrada = new ObradaOperater();
+        obrada = new ObradaIgrac();
         setTitle(Aplikacija.NAZIV_APP + " Login");
     }
 
@@ -36,14 +36,15 @@ public class ProzorLogin extends javax.swing.JFrame {
             return;
         }
         
-        Operater o = obrada.autoriziraj(txtKorisnickoIme.getText(),
+        Igrac igr = obrada.autoriziraj(txtKorisnickoIme.getText(),
                 pswLozinka.getPassword());
         
-        if(o==null){
-            lblPoruka.setText("Neispravna kombinacija\nKorisnicko ime i lozinka");
+        if(igr==null){
+            lblPoruka.setText("Neispravna kombinacija korisnicko ime i lozinka");
             return;
         }
         
+        Aplikacija.IGRAC=igr;
         new ProzorIzbornik().setVisible(true);
         dispose();
     }
@@ -57,18 +58,31 @@ public class ProzorLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtKorisnickoIme = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         pswLozinka = new javax.swing.JPasswordField();
         btnPrijava = new javax.swing.JButton();
         lblPoruka = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Korisnicko ime:");
 
+        txtKorisnickoIme.setText("KKaplo");
+
         jLabel2.setText("Lozinka:");
+
+        pswLozinka.setText("admin");
+        pswLozinka.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pswLozinkaActionPerformed(evt);
+            }
+        });
 
         btnPrijava.setText("Prijava");
         btnPrijava.addActionListener(new java.awt.event.ActionListener() {
@@ -77,22 +91,33 @@ public class ProzorLogin extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Unos novog korisnika");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pswLozinka)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtKorisnickoIme, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(52, 52, 52))
+                            .addComponent(txtKorisnickoIme, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPrijava, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(102, 102, 102))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,11 +130,13 @@ public class ProzorLogin extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pswLozinka, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addGap(54, 54, 54)
+                .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -120,6 +147,15 @@ public class ProzorLogin extends javax.swing.JFrame {
         autoriziraj();
     }//GEN-LAST:event_btnPrijavaActionPerformed
 
+    private void pswLozinkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswLozinkaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pswLozinkaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new ProzorNoviKorisnik().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -127,8 +163,10 @@ public class ProzorLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPrijava;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblPoruka;
     private javax.swing.JPasswordField pswLozinka;
     private javax.swing.JTextField txtKorisnickoIme;

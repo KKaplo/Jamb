@@ -2,13 +2,15 @@ C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\controller\Ob
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\util\EdunovaException.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\model\Entitet.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\controller\ObradaIgra.java
+C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\util\Aplikacija.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\util\HibernateUtil.java
+C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\view\ProzorLogin.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\controller\ObradaIgrac.java
-C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\controller\ObradaOperater.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\model\Polje.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\model\Igra.java
-C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\model\Operater.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\Start.java
+C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\view\SplashScreen.java
+C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\view\ProzorIzbornik.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\util\PocetniInsert.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\model\Igrac.java
 C:\Users\Karlo\Documents\Zavrsni rad\JambAPP\src\main\java\edunova\controller\ObradaPolje.java

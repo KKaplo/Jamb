@@ -4,6 +4,9 @@
  */
 package edunova.view;
 
+import edunova.util.Aplikacija;
+import static edunova.util.Aplikacija.IGRAC;
+
 /**
  *
  * @author Karlo
@@ -15,6 +18,8 @@ public class ProzorIzbornik extends javax.swing.JFrame {
      */
     public ProzorIzbornik() {
         initComponents();
+        setTitle(Aplikacija.NAZIV_APP + ": " + 
+                Aplikacija.IGRAC.getKorisnickoIme());
     }
 
     /**
@@ -36,7 +41,7 @@ public class ProzorIzbornik extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 382, Short.MAX_VALUE)
+            .addGap(0, 424, Short.MAX_VALUE)
         );
 
         pack();

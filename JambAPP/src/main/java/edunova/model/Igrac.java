@@ -1,6 +1,7 @@
 package edunova.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
@@ -12,6 +13,10 @@ public class Igrac extends Entitet {
     private String ime;
     private String prezime;
     private String korisnickoIme;
+    @Column(columnDefinition = "char(61)")
+    private char[] lozinka;
+
+    
 
     @OneToMany(mappedBy = "igrac",cascade = {CascadeType.ALL})
     private List<Igra> igre;
@@ -59,6 +64,14 @@ public class Igrac extends Entitet {
 
     public void setKorisnickoIme(String korisnickoIme) {
         this.korisnickoIme = korisnickoIme;
+    }
+    
+    public char[] getLozinka() {
+        return lozinka;
+    }
+
+    public void setLozinka(char[] lozinka) {
+        this.lozinka = lozinka;
     }
 
     @Override

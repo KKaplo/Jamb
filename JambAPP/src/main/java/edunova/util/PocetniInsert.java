@@ -1,6 +1,7 @@
 package edunova.util;
 
 import com.github.javafaker.Faker;
+import edunova.controller.ObradaIgrac;
 import edunova.model.Igra;
 import edunova.model.Igrac;
 import edunova.model.Polje;
@@ -9,10 +10,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import org.hibernate.Session;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class PocetniInsert {
 
-    private static final int BROJ_IGRACA = 100;
+    private static final int BROJ_IGRACA = 50;
 
     private Faker faker;
     private List<Igrac> igraci;
@@ -46,11 +48,24 @@ public class PocetniInsert {
 
     private void kreirajIgrace() {
         Igrac igr;
+        
+        Igrac admin = new Igrac();
+        admin.setIme("Karlo");
+        admin.setPrezime("Kapl");
+        admin.setKorisnickoIme("KKaplo");
+        admin.setLozinka(BCrypt.hashpw("admin", 
+                BCrypt.gensalt()).toCharArray());
+        
+        session.persist(admin);
+            igraci.add(admin);
+        
         for (int i = 0; i < BROJ_IGRACA; i++) {
             igr = new Igrac();
             igr.setIme(faker.name().firstName());
             igr.setPrezime(faker.name().lastName());
             igr.setKorisnickoIme(igr.getPrezime() + faker.number().randomNumber());
+            igr.setLozinka(BCrypt.hashpw(igr.getKorisnickoIme(),BCrypt.gensalt()).toCharArray());
+            
             session.persist(igr);
             igraci.add(igr);
         }

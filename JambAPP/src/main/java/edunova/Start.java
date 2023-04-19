@@ -5,6 +5,7 @@ package edunova;
 
 //import edunova.util.HibernateUtil;
 
+import edunova.util.PocetniInsert;
 import edunova.view.SplashScreen;
 
 
