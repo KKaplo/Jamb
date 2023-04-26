@@ -103,6 +103,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUnosIme">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUnosImeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -110,6 +113,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUnosPrezime">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUnosPrezimeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -117,6 +123,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUnosKorisnickoIme">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUnosKorisnickoImeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -129,8 +138,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pswUnosLozinke">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pswUnosLozinkeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pswProvjeraLozinke">
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pswProvjeraLozinkeKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Unos">
       <Properties>

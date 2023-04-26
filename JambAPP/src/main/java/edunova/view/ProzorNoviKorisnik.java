@@ -8,6 +8,7 @@ import edunova.controller.ObradaIgrac;
 import edunova.model.Igrac;
 import edunova.util.Aplikacija;
 import edunova.util.EdunovaException;
+import java.awt.event.KeyEvent;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import javax.swing.DefaultListModel;
@@ -62,13 +63,43 @@ public class ProzorNoviKorisnik extends javax.swing.JFrame {
 
         jLabel2.setText("Ime:");
 
+        txtUnosIme.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUnosImeKeyPressed(evt);
+            }
+        });
+
         jLabel3.setText("Prezime");
 
+        txtUnosPrezime.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUnosPrezimeKeyPressed(evt);
+            }
+        });
+
         jLabel4.setText("Korisnicko ime:");
+
+        txtUnosKorisnickoIme.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUnosKorisnickoImeKeyPressed(evt);
+            }
+        });
 
         jLabel5.setText("Lozinka:");
 
         jLabel6.setText("Ponovi lozinku:");
+
+        pswUnosLozinke.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pswUnosLozinkeKeyPressed(evt);
+            }
+        });
+
+        pswProvjeraLozinke.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pswProvjeraLozinkeKeyPressed(evt);
+            }
+        });
 
         Unos.setText("Unesi");
         Unos.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +191,36 @@ public class ProzorNoviKorisnik extends javax.swing.JFrame {
         new ProzorLogin().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnPovratakActionPerformed
+
+    private void txtUnosImeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnosImeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            txtUnosPrezime.requestFocus();
+        }
+    }//GEN-LAST:event_txtUnosImeKeyPressed
+
+    private void txtUnosPrezimeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnosPrezimeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            txtUnosKorisnickoIme.requestFocus();
+        }
+    }//GEN-LAST:event_txtUnosPrezimeKeyPressed
+
+    private void txtUnosKorisnickoImeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUnosKorisnickoImeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            pswUnosLozinke.requestFocus();
+        }
+    }//GEN-LAST:event_txtUnosKorisnickoImeKeyPressed
+
+    private void pswUnosLozinkeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswUnosLozinkeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            pswProvjeraLozinke.requestFocus();
+        }
+    }//GEN-LAST:event_pswUnosLozinkeKeyPressed
+
+    private void pswProvjeraLozinkeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswProvjeraLozinkeKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            napuniModel();
+        }
+    }//GEN-LAST:event_pswProvjeraLozinkeKeyPressed
 
     private void napuniModel() {
         var igr = obrada.getEntitet();
