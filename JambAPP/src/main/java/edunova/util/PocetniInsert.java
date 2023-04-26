@@ -1,7 +1,6 @@
 package edunova.util;
 
 import com.github.javafaker.Faker;
-import edunova.controller.ObradaIgrac;
 import edunova.model.Igra;
 import edunova.model.Igrac;
 import edunova.model.Polje;
@@ -157,6 +156,7 @@ public class PocetniInsert {
         polja.add(polje);
 
         polje = kreirajPolje("cetiriNajava", slucajniBrojPolje(4), igra);
+        session.persist(polje);
         polja.add(polje);
 
         polje = kreirajPolje("cetiriRucno", slucajniBrojPolje(4), igra);

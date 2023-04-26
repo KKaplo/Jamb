@@ -2,6 +2,7 @@
 package edunova.controller;
 
 import edunova.model.Igra;
+import edunova.model.Igrac;
 import edunova.util.EdunovaException;
 import java.util.List;
 
@@ -15,6 +16,14 @@ public class ObradaIgra extends Obrada<Igra> {
     public List<Igra> read() {
         return session.createQuery("from Igra", 
                 Igra.class).list();
+    }
+    
+    public List<Igra> read(Igrac i) {
+        return session.createQuery("from Igra "
+                + " where igrac=:i ",
+                Igra.class)
+                .setParameter("i", i)
+                .list();
     }
 
     @Override

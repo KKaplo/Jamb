@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 public class Igra extends Entitet {
-
+    
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Polje> polja;
 
@@ -30,6 +30,7 @@ public class Igra extends Entitet {
         this.igrac = igrac;
     }
 
+    
     public List<Polje> getPolja() {
         return polja;
     }
